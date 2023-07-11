@@ -1,10 +1,14 @@
 import React from 'react'
 import Editors from './Editors'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import {store} from './store/store';
 
 const App = () => {
     return (
-        <Editors />
+        <Provider store={store}>
+            <Editors />
+        </Provider>
     )
 }
 

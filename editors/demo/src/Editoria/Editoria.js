@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState, useMemo, useRef } from 'react';
+import React, { useLayoutEffect, useState, useMemo, useRef, useEffect } from 'react';
 
 import { Wax } from 'wax-prosemirror-core';
 
@@ -6,6 +6,8 @@ import { EditoriaLayout, EditoriaMobileLayout } from './layout';
 import { config, configMobile } from './config';
 import { demo } from './demo';
 import { debounce } from 'lodash';
+import { useSelector } from 'react-redux';
+import { userSelector } from '../store/userSlice';
 
 const renderImage = file => {
   const reader = new FileReader();
@@ -17,17 +19,12 @@ const renderImage = file => {
   });
 };
 
-const user = {
-  userId: 'b3cfc28e-0f2e-45b5-b505-e66783d4f946',
-  userColor: {
-    addition: 'royalblue',
-    deletion: 'indianred',
-  },
-  username: 'admin',
-};
+
 
 const Editoria = () => {
   const [width] = useWindowSize();
+
+  const state = useSelector(userSelector);
 
   let layout = EditoriaLayout;
   let finalConfig = config;
@@ -38,6 +35,18 @@ const Editoria = () => {
     finalConfig = configMobile;
     key = 'editoriaMobile';
   }
+
+  const user = {
+    userId: state.user_id,
+    userColor: {
+      addition: 'royalblue',
+      deletion: 'indianred',
+    },
+    username: state.user_name,
+  };
+
+  console.log(user);
+
   const editorRef = useRef();
 
   const EditoriaComponent = useMemo(

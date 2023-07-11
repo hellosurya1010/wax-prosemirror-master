@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Editoria from './Editoria/Editoria';
 import HHMI from './HHMI/HHMI';
 import NCBI from './NCBI/NCBI';
 import OEN from './OEN/OEN';
+import { json } from 'react-router-dom';
+import { updateAll, userSelector } from './store/userSlice';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -63,6 +66,7 @@ const ProjectButton = styled.button`
 
 const Editors = () => {
   const [project, setProject] = useState('editoria');
+  const dispatch = useDispatch();
 
   const initialState = {
     editorInfo: {
@@ -71,6 +75,15 @@ const Editors = () => {
     },
   };
   const [editorInfo, setEditorInfo] = useState(initialState);
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    let user = url.searchParams.get('user');
+    if (user) {
+      user = JSON.parse(user);
+      dispatch(updateAll(user));
+    }
+  }, []);
 
   const displayProject = () => {
     switch (project) {
@@ -85,9 +98,14 @@ const Editors = () => {
     }
   };
 
+  const sateUser = useSelector(userSelector)
+
   return (
     <>
       <GlobalStyle />
+      <button onClick={() => {
+        console.log(sateUser);
+      }}>log</button>
       {/* <ChooseProject>
         <Projects>
           <span>Select Project:</span>
