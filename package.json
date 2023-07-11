@@ -26,11 +26,6 @@
     "editoria": "cd editors/demo && set PORT=3001 && yarn start",
     "reset": "yarn clean && yarn"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS && lint-staged"
-    }
-  },
   "config": {
     "commitizen": {
       "path": "cz-customizable"
