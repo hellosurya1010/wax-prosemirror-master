@@ -1,0 +1,365 @@
+.underline {
+    text-decoration: underline;
+}
+
+
+.italic {
+    font-style: italic;
+    /* background-color: rgb(230, 116, 116); */
+}
+
+.em {
+    font-style: italic;
+}
+
+.strong {
+    font-weight: 800;
+}
+
+
+.reference {
+    background-color: red !important;
+    color: white;
+}
+
+.reference::after {
+    content: 'Author';
+    background-color: black !important;
+}
+
+
+
+
+
+
+
+
+.doi {
+    background-color: #24b6ff !important;
+    font-size: .9em;
+}
+
+.doi::after {
+    content: 'doi';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.suffix {
+    background-color: #932a2a !important;
+    font-size: .9em;
+}
+
+.suffix::after {
+    content: 'suffix';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.pages {
+    background-color: #d7a8d1 !important;
+    font-size: .9em;
+}
+
+.pages::after {
+    content: 'pages';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.etal {
+    background-color: #4ccda6 !important;
+    font-size: .9em;
+}
+
+.etal::after {
+    content: 'etal';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.editor {
+    background-color: #37b3d2 !important;
+    font-size: .9em;
+}
+
+.editor::after {
+    content: 'editor';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.pubid {
+    background-color: #c78ab6 !important;
+    font-size: .9em;
+}
+
+.pubid::after {
+    content: 'pubid';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.author {
+    background-color: #ffe01a !important;
+    font-size: .9em;
+}
+
+.author::after {
+    content: 'author';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.title {
+    background-color: #337ab7 !important;
+    font-size: .9em;
+}
+
+.title::after {
+    content: 'title';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.issn {
+    background-color: #7f6b66 !important;
+    font-size: .9em;
+}
+
+.issn::after {
+    content: 'issn';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.year {
+    background-color: #07ab7a !important;
+    font-size: .9em;
+}
+
+.year::after {
+    content: 'year';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.day {
+    background-color: #8f679e !important;
+    font-size: .9em;
+}
+
+.day::after {
+    content: 'day';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.publisher-name {
+    background-color: #00f074 !important;
+    font-size: .9em;
+}
+
+.publisher-name::after {
+    content: 'publisher-name';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.collab {
+    background-color: #a08c27 !important;
+    font-size: .9em;
+}
+
+.collab::after {
+    content: 'collab';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.publisher-loc {
+    background-color: #337ab7 !important;
+    font-size: .9em;
+}
+
+.publisher-loc::after {
+    content: 'publisher-loc';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.issue {
+    background-color: #0da01e !important;
+    font-size: .9em;
+}
+
+.issue::after {
+    content: 'issue';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.volume {
+    background-color: #0be5c4 !important;
+    font-size: .9em;
+}
+
+.volume::after {
+    content: 'volume';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.edition {
+    background-color: #a615f4 !important;
+    font-size: .9em;
+}
+
+.edition::after {
+    content: 'edition';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.given {
+    background-color: #735ace !important;
+    font-size: .9em;
+}
+
+.given::after {
+    content: 'given';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.firstname {
+    background-color: #2ae5ad !important;
+    font-size: .9em;
+}
+
+.firstname::after {
+    content: 'firstname';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.surname {
+    background-color: #2fb41d !important;
+    font-size: .9em;
+}
+
+.surname::after {
+    content: 'surname';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.translator {
+    background-color: #98ec9d !important;
+    font-size: .9em;
+}
+
+.translator::after {
+    content: 'translator';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.source {
+    background-color: #00d5ff !important;
+    font-size: .9em;
+}
+
+.source::after {
+    content: 'source';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.url {
+    background-color: #11e8e5 !important;
+    font-size: .9em;
+}
+
+.url::after {
+    content: 'url';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.x {
+    background-color: #bab0b0 !important;
+    font-size: .9em;
+}
+
+.x::after {
+    content: 'x';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.label {
+    background-color: #f5cdb2 !important;
+    font-size: .9em;
+}
+
+.label::after {
+    content: 'label';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.month {
+    background-color: #55a5a0 !important;
+    font-size: .9em;
+}
+
+.month::after {
+    content: 'month';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.person {
+    background-color: #ffea00 !important;
+    font-size: .9em;
+}
+
+.person::after {
+    content: 'person';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.date-in-citation {
+    background-color: #e89a11 !important;
+    font-size: .9em;
+}
+
+.date-in-citation::after {
+    content: 'date-in-citation';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.prefix {
+    background-color: #a4bcb6 !important;
+    font-size: .9em;
+}
+
+.prefix::after {
+    content: 'prefix';
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.isbn {
+    background-color: #9d9390 !important;
+    font-size: .9em;
+}
+
+.isbn::after {
+    content: 'isbn';
+    background-color: #000 !important;
+    color: #fff;
+}
