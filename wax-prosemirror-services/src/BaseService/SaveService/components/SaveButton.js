@@ -3,8 +3,14 @@ import React, { useContext, useMemo, useEffect, useState } from 'react';
 import { WaxContext, MenuButton } from 'wax-prosemirror-core';
 import axios from 'axios';
 import { backendApiUrl } from '../../../../../editor-config'
+import { useSelector } from 'react-redux';
+import { userSelector } from '../../../../../editors/demo/src/store/userSlice';
+
 
 const SaveButton = ({ view = {}, item }) => {
+
+  const user = useSelector(userSelector);
+    
   const { icon, label, select, title } = item;
 
   const {
@@ -20,7 +26,7 @@ const SaveButton = ({ view = {}, item }) => {
 
   const saveDocument = () => {
     const docContent = document.querySelector('.ProseMirror').innerHTML;
-    const token = `17|kCbWP7B6ebKNDvaRkWAJy6mzaYxI2hvveL8yBxAo`;
+    const {token} = user;
     const data = {
       content: docContent,
       content_type: 'HTML',

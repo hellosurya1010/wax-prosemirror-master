@@ -45,8 +45,6 @@ const Editoria = () => {
     username: state.user_name,
   };
 
-  console.log(user);
-
   const editorRef = useRef();
 
   const EditoriaComponent = useMemo(
@@ -71,7 +69,7 @@ const Editoria = () => {
         />
       </>
     ),
-    [layout, finalConfig],
+    [layout, finalConfig, user],
   );
   return <>{EditoriaComponent}</>;
 };

@@ -103,9 +103,6 @@ const Editors = () => {
   return (
     <>
       <GlobalStyle />
-      <button onClick={() => {
-        console.log(sateUser);
-      }}>log</button>
       {/* <ChooseProject>
         <Projects>
           <span>Select Project:</span>

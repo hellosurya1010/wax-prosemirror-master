@@ -13,6 +13,7 @@ import replaceAroundStep from './helpers/replaceAroundStep';
 import addMarkStep from './helpers/addMarkStep';
 import removeMarkStep from './helpers/removeMarkStep';
 
+
 const trackedTransaction = (
   tr,
   state,
@@ -55,6 +56,10 @@ const trackedTransaction = (
   const newTr = state.tr;
   const map = new Mapping();
   // const date = Math.floor(Date.now());
+  console.log(user);
+
+  
+  
   const date = Date();
 
   tr.steps.forEach((originalStep, originalStepIndex) => {
