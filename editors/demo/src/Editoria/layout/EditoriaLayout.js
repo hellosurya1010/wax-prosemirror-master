@@ -257,6 +257,7 @@ const EditoriaLayout = ({ editor }) => {
 
   useEffect(() => {}, [delayedShowedNotes]);
 
+
   return (
     <ThemeProvider theme={cokoTheme}>
       <Wrapper style={fullScreenStyles} id="wax-container">

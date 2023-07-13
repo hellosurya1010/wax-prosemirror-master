@@ -113,6 +113,7 @@ export default {
         },
         'Lists',
         'Images',
+        'MathService',
         'Tables',
         'ExternalAPIContent',
         'QuestionsDropDown',

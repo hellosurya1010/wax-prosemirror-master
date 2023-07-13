@@ -6,6 +6,7 @@ class SpecialCharacters extends ToolGroup {
   tools = [];
   constructor(@inject('SpecialCharactersTool') specialCharactersTool) {
     super();
+    console.log(specialCharactersTool);
     this.tools = [specialCharactersTool];
   }
 }

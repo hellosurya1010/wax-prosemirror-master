@@ -31,6 +31,7 @@ import {
   FullScreenService,
   FullScreenToolGroupService,
   SpecialCharactersService,
+  MathEquationService,
   SpecialCharactersToolGroupService,
   HighlightService,
   TextHighlightToolGroupServices,
@@ -48,6 +49,7 @@ import {
   disallowPasteImagesPlugin,
   BlockDropDownToolGroupService,
   TitleToolGroupService,
+  MathEquationToolGroupService,
 } from 'wax-prosemirror-services';
 
 import { EditoriaSchema } from 'wax-prosemirror-core';
@@ -104,6 +106,7 @@ export default {
         'CustomTagInline',
         'Notes',
         'Lists',
+        'MathEquation',
         'SpecialCharacters',
         'CodeBlock',
         'Tables',
@@ -130,6 +133,7 @@ export default {
   // BulletListService: { subList: false },
   // JoinUpService: { subList: false },
   SpecialCharactersService: CharactersList,
+  // MathEquationService: {},
   SchemaService: EditoriaSchema,
   TitleService: { updateTitle },
   RulesService: [emDash, ellipsis],
@@ -223,5 +227,9 @@ export default {
     new TrackCommentOptionsToolGroupService(),
     new CustomTagInlineToolGroupService(),
     new CustomTagBlockToolGroupService(),
+    
+    new MathEquationService(), 
+    new MathEquationToolGroupService(),
+    
   ],
 };

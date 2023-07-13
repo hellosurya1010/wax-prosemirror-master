@@ -40,6 +40,12 @@ export { default as MultipleDropDownService } from './src/MultipleDropDownServic
 export { default as OENContainersService } from './src/OENContainersService/OENContainersService';
 export { default as YjsService } from './src/YjsService/YjsService';
 export { default as ExternalAPIContentService } from './src/ExternalAPIContentService/ExternalAPIContentService';
+
+export { default as MathEquationService } from './src/MathEquationService/MathEquationService';
+
+
+
+
 /*
 ToolGroups
 */
@@ -70,6 +76,15 @@ export { default as OENContainersToolGroupService } from './src/WaxToolGroups/OE
 export { default as OENLeftToolGroupService } from './src/WaxToolGroups/OENLeftToolGroupService/OENLeftToolGroupService';
 export { default as FindAndReplaceToolGroupService } from './src/WaxToolGroups/FindAndReplaceToolGroupService/FindAndReplaceToolGroupService';
 export { default as TitleToolGroupService } from './src/WaxToolGroups/TitleToolGroupService/TitleToolGroupService';
+
+
+export { default as MathEquationToolGroupService } from './src/WaxToolGroups/MathEquationToolGroupService/MathEquationToolGroupService';
+
+
+
+
 /* Plugins */
+
+
 
 export { default as disallowPasteImagesPlugin } from './src/ImageService/plugins/disallowPasteImagesPlugin';

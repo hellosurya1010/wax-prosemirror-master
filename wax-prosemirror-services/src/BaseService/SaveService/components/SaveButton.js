@@ -29,7 +29,7 @@ const SaveButton = ({ view = {}, item }) => {
     const {token} = user;
     const data = {
       content: docContent,
-      content_type: 'HTML',
+      content_type: 'html',
       module: 'ref-bot',
     }
     return axios.post(`${backendApiUrl}/update-document-content/doc1`, data, { headers: { 'Authorization': `Bearer ${token}` } })

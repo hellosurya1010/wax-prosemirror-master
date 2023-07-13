@@ -31,7 +31,6 @@ class MenuService extends Service {
     this.container.bind('createTools').toFactory(context => {
       return configTools => {
         const tools = [];
-        
         configTools.forEach(tool => {
           try {
             let tl = {};
