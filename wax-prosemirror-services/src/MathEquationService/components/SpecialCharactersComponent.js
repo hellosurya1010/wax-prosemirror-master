@@ -11,6 +11,7 @@ import { grid, th, override } from '@pubsweet/ui-toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { WaxContext } from 'wax-prosemirror-core';
 import { filter, groupBy, debounce } from 'lodash';
+import EquationMaker from './EquationMaker';
 
 const Wrapper = styled.div`
   width: 400px;
@@ -106,7 +107,6 @@ const SpecialCharacter = styled.div`
 `;
 
 const SpecialCharactersComponent = ({ close }) => {
-  const searchRef = useRef(null);
   const { activeView, app } = useContext(WaxContext);
   const [searchValue, setSearchValue] = useState('');
   const [isFirstRun, setFirstRun] = useState(true);
@@ -116,9 +116,6 @@ const SpecialCharactersComponent = ({ close }) => {
   const [specialCharactersList, setSpecialCharactersList] = useState(
     CharactersList,
   );
-  const onChange = () => {
-    setSearchValue(searchRef.current.value);
-  };
 
   const delayedSearch = useCallback(
     debounce(() => searchCharacters(), 300),
@@ -134,15 +131,6 @@ const SpecialCharactersComponent = ({ close }) => {
     setSpecialCharactersList(filtertedSpecialCharacters);
   };
 
-  useEffect(() => {
-    delayedSearch();
-    if (isFirstRun) {
-      setTimeout(() => {
-        searchRef.current.focus();
-        setFirstRun(false);
-      });
-    }
-  }, [searchValue, delayedSearch]);
 
   const insertCharacter = character => {
     const { state, dispatch } = activeView;
@@ -176,20 +164,12 @@ const SpecialCharactersComponent = ({ close }) => {
         </SpecialCharactersGroup>,
       );
     });
+    return <div><EquationMaker/></div>;
     return <div>{lists}</div>;
   };
 
   return (
     <Wrapper>
-      <SearchInputContainer>
-        <SearchInput
-          onChange={onChange}
-          placeholder="Search"
-          ref={searchRef}
-          type="text"
-          value={searchValue}
-        />
-      </SearchInputContainer>
       <CharactersListComponent>{renderList()}</CharactersListComponent>
     </Wrapper>
   );

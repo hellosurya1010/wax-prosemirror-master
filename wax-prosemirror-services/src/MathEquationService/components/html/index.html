@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Math widgets</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- include libraries Query -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/math.css?v=956">
+  <script src="js/lib/keypress-2.1.5.min.js"></script>
+  <script src="js/symbol-entities.js?v=956" defer></script>
+  <script src="js/math-editor.js?v=956" defer></script>
+</head>
+
+<body>
+  <div class="menus">
+    <a id="subsup" title="subscript superscript" class="button button-primary">&square;<sub>&square;</sub></a>
+    <a id="root" title="square root" class="button button-primary"><math>
+        <msqrt>
+          <mrow>
+            <mi>&square;</mi>
+          </mrow>
+        </msqrt>
+      </math></a>
+    <a id="frac" title="fraction" class="button button-primary"><math>
+        <mfrac>
+          <mi>&square;</mi>
+          <mi>&square;</mi>
+        </mfrac>
+      </math></a>
+    <a id="underover" title="under and over" class="button button-primary"><math>
+        <munderover>
+          <mi>&sum;</mi>
+          <mi>&square;</mi>
+          <mi>&square;</mi>
+        </munderover>
+      </math></a>
+    <a id="matrix" title="fence and matrices" class="button button-primary"><math>
+        <mo>(</mo>
+        <mtable>
+          <mtr>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+            <mtd>
+              <mi>&square;</mi>
+            </mtd>
+          </mtr>
+        </mtable>
+        <mo>)</mo>
+      </math></a>
+    <a id="greek" title="greek" class="button button-primary"><math>
+        <mrow>
+          <mi>&alpha;</mi>
+          <mi>&beta;</mi>
+        </mrow>
+      </math></a>
+    <a id="math" title="math symbols" class="button button-primary"><math>
+        <mrow>
+          <mi>&sum;</mi>
+          <mi>&infin;</mi>
+        </mrow>
+      </math></a>
+    <a id="text" title="math symbols" class="button button-primary"><math>
+        <mrow>
+          <mtext>Text</mtext>
+        </mrow>
+      </math></a>
+    <a id="aboutus" title="About Us" class="button button-primary"><img class="logo" src="img/mlq_logo.svg"></a>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="output" contentEditable="true">
+    <math displaystyle="true">
+      <mmultiscripts>
+        <mrow>
+          <mi>F</mi>
+        </mrow>
+        <mrow>
+          <mi>k</mi>
+        </mrow>
+        <mrow>
+          <mi>l</mi>
+        </mrow>
+        <mprescripts />
+        <mrow>
+          <mi>i</mi>
+        </mrow>
+        <mrow>
+          <mi>j</mi>
+        </mrow>
+      </mmultiscripts>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <mi>a</mi>
+          <mo>+</mo>
+          <mi>b</mi>
+        </mrow>
+        <mrow>
+          <mi>c</mi>
+          <mo>+</mo>
+          <mi>d</mi>
+        </mrow>
+      </mfrac>
+      <mi>&nbsp;</mi>
+    </math>
+  </div>
+  <button id="insmath" class="button button-primary" onClick="sendMathML();">Insert Math</button>
+  <textarea id="mathmlcode" cols="50" rows="7" ondblclick="this.style.display='none';"
+    title="Double-click on this to remove the code area"></textarea>
+</body>
+
+</html>
