@@ -69,7 +69,6 @@ export default class Node {
       parseDOM: this._parseRules.map(rule => rule.combineRules()),
       toDOM: node => {
         let hooks = {};
-
         importer.go({ node }, hook => {
           hooks = hook;
         });

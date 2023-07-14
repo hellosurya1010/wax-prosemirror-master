@@ -1,12 +1,20 @@
 import { Service } from 'wax-prosemirror-core';
 import MathEquationTool from './MathEquationTool';
 import mathNode from './schema/mathNode';
-import './css/math.css'
-import './css/normalize.css'
-import './css/skeleton.css'
+// import './css/math.css'
+// import './css/normalize.css'
+// import './css/skeleton.css'
+import './css/math-tag.css'
 
 class MathEquationService extends Service {
   name = 'MathEquationService';
+
+  boot() {
+    const {
+      schema: { schema },
+    } = this.app;
+    console.log(schema);
+  }
 
   register() {
     const mathTags = [
@@ -26,11 +34,11 @@ class MathEquationService extends Service {
 
     const createNode = this.container.get('CreateNode');
     this.container.bind('MathEquationTool').to(MathEquationTool);
-    mathTags.forEach(tag => {
-      const options = mathNode(tag);
-      console.log(options);
+    mathTags.forEach(item => {
+      const options = mathNode(item);
+      // console.log(options);
       createNode({
-        [tag]: options,
+        [item.tag]: options,
       });
     });
   }
