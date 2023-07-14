@@ -2,10 +2,6 @@
  MLQ - WYSIWYG MathML editor
  All rights reserved. CQRL Bits LLP © 2023 (cqrlbits@gmail.com)
 */
-
-
-import jQuery from 'jquery';
-
 var yedit_caps_lock = false;
 var capsKeyPressConfig = {
     "keys"          : "caps_lock",
@@ -69,7 +65,6 @@ function addMessageListenerFromParentFrame() {
 function initKeypressEvents() {
     var el = document.body.querySelector(".output");
     var listener = new window.keypress.Listener(el);
-    // var listener = new window.keypress.Listener(el);
     /*=======Track-changes=====================*/
     const track_changes = getTrackChangesKeyPressConfig();
     listener.register_many(track_changes);

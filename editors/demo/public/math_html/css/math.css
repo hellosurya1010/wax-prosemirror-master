@@ -1,0 +1,114 @@
+/*
+ MLQ - WYSIWYG MathML editor
+ All rights reserved. CQRL Bits LLP © 2023 (cqrlbits@gmail.com)
+*/
+
+.menus {
+    display: block;
+    -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+.menus > a, .menus li {
+    float: left;
+    min-height: 50px;
+    max-height: 50px;
+    min-width: 55px;
+    max-width: 55px;
+    margin: 0;
+    padding: 0;
+    border: thin solid black !important;
+    color: black !important;
+    opacity: 0.99;
+    z-index: 100000;
+}
+.menus msqrt > mrow {
+    padding-top: 3px;
+}
+.menus mrow {
+    padding: 2px;
+    border: thin solid darkblue;
+}
+#subsup {
+    font-size: 200%;
+    padding: 0;
+}
+#frac, #greek, #math, #root, #mathml {
+    font-size: 150%;
+}
+#root, #underover, #matrix, #greek, #math, #text {
+    padding-top: 3px;
+}
+#underover {
+    font-size: 120%;
+}
+#matrix, #matrix li {
+    font-size: 50%;
+    font-weight: bold;
+}
+
+.output {
+    z-index: 1;
+    display: block;
+    text-align: left;
+    margin-left: 1em;
+    padding: 1em;
+    width: 350px;
+}
+
+.output li mi {
+    border: thin dotted black;
+    padding: 2px;
+}
+#__cursor__ {
+    border: thin dotted black;
+    padding: 3px;
+    background-color: lightgrey;
+}
+
+#greek ul, #math ul {
+    display: block !important;
+    border: thin solid darkblue;
+    white-space: normal;
+    margin-top: 0.5em;
+    padding:0;
+    line-height: 100%;
+}
+#greek li, #math li {
+    display: inline !important;
+    line-height: 100% !important;
+    padding: 3px;
+}
+#greek p, #math p {
+    display: inline !important;
+}
+#greek li, #math li {
+    float: none;
+}
+#insmath {
+    margin-top: 4em;
+}
+#mathmlcode {
+    display: none;
+}
+mtext {
+    font-family: serif !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+}
+#aboutus {
+    font-family: serif !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    //padding-top: 3px;
+    font-size: 110%;
+}
+img.logo {
+    display: inline;
+    max-width: 60px;
+}
