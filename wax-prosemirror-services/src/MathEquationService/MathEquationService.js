@@ -5,6 +5,7 @@ import mathNode from './schema/mathNode';
 // import './css/normalize.css'
 // import './css/skeleton.css'
 import './css/math-tag.css'
+import { createHtmlNode } from './schema/htmlNodes';
 
 class MathEquationService extends Service {
   name = 'MathEquationService';
@@ -33,6 +34,7 @@ class MathEquationService extends Service {
     ];
 
     const createNode = this.container.get('CreateNode');
+    console.log(this.container);
     this.container.bind('MathEquationTool').to(MathEquationTool);
     mathTags.forEach(item => {
       const options = mathNode(item);
@@ -41,6 +43,9 @@ class MathEquationService extends Service {
         [item.tag]: options,
       });
     });
+
+    createHtmlNode({createNode})
+    
   }
 }
 export default MathEquationService;

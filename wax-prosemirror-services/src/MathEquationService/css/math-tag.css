@@ -1,3 +1,8 @@
+/* msqrt{
+    margin: 10px;
+} */
+
+
 mi {
     accent-color: auto;
     align-content: normal;
@@ -15,7 +20,7 @@ mi {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -62,7 +67,7 @@ mi {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -302,7 +307,7 @@ mrow {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -349,7 +354,7 @@ mrow {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -589,7 +594,7 @@ msqrt {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -636,7 +641,7 @@ msqrt {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -876,7 +881,7 @@ math {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -923,7 +928,7 @@ math {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -1163,7 +1168,7 @@ mfrac {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -1210,7 +1215,7 @@ mfrac {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -1450,7 +1455,7 @@ munderover {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -1497,7 +1502,7 @@ munderover {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -1737,7 +1742,7 @@ mo {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -1784,7 +1789,7 @@ mo {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -2024,7 +2029,7 @@ mtd {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -2071,7 +2076,7 @@ mtd {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -2311,7 +2316,7 @@ mtr {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -2358,7 +2363,7 @@ mtr {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -2598,7 +2603,7 @@ mtable {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -2645,7 +2650,7 @@ mtable {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -2885,7 +2890,7 @@ mtext {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -2932,7 +2937,7 @@ mtext {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;
@@ -3172,7 +3177,7 @@ mmultiscripts {
     background-attachment: scroll;
     background-blend-mode: normal;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: blue;
     background-origin: padding-box;
     background-position: 0% 0%;
     background-repeat: repeat;
@@ -3219,7 +3224,7 @@ mmultiscripts {
     caret-color: rgb(0, 0, 0);
     clip: auto;
     clip-rule: nonzero;
-    color: rgb(0, 0, 0);
+    color: red;
     color-interpolation: srgb;
     color-interpolation-filters: linearrgb;
     color-rendering: auto;

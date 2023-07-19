@@ -8,6 +8,8 @@ import { demo } from './demo';
 import { debounce } from 'lodash';
 import { useSelector } from 'react-redux';
 import { userSelector } from '../store/userSlice';
+import { backendApiUrl } from '../../../../editor-config';
+import axios from 'axios';
 
 const renderImage = file => {
   const reader = new FileReader();
@@ -21,7 +23,8 @@ const renderImage = file => {
 
 
 
-const Editoria = () => {
+const Editoria = (props) => {
+  const {initialContent} = props;
   const [width] = useWindowSize();
 
   const state = useSelector(userSelector);
@@ -44,33 +47,37 @@ const Editoria = () => {
     },
     username: state.user_name,
   };
+  
 
   const editorRef = useRef();
 
   const EditoriaComponent = useMemo(
-    () => (
-      <>
-        <Wax
-          ref={editorRef}
-          key={key}
-          config={finalConfig}
-          autoFocus
-          placeholder="Type Something..."
-          fileUpload={file => renderImage(file)}
-          value={demo}
-          // readonly
-          layout={layout}
-          // onChange={debounce(source => {
-          //   console.log(JSON.stringify(source));
-          // }, 200)}
-          user={user}
-          scrollMargin={200}
-          scrollThreshold={200}
-        />
-      </>
-    ),
-    [layout, finalConfig, user],
+    () => {
+      return (
+        <>
+          <Wax
+            ref={editorRef}
+            key={key}
+            config={finalConfig}
+            autoFocus
+            placeholder="Type Something..."
+            fileUpload={file => renderImage(file)}
+            value={initialContent} 
+            // readonly
+            layout={layout}
+            // onChange={debounce(source => {
+            //   console.log(JSON.stringify(source));
+            // }, 200)}
+            user={user}
+            scrollMargin={200}
+            scrollThreshold={200}
+          />
+        </>
+      )
+    },
+    [initialContent, layout, finalConfig, user],
   );
+
   return <>{EditoriaComponent}</>;
 };
 

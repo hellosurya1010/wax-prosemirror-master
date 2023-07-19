@@ -10,6 +10,8 @@ import React, {
 } from 'react';
 import styled from 'styled-components';
 import { WaxContext, Icon, useOnClickOutside } from 'wax-prosemirror-core';
+import { useDispatch, useSelector } from 'react-redux';
+import { referenceElementSelector } from '../../../../editors/demo/src/store/referenceElementSlice';
 
 const Wrapper = styled.div`
   opacity: ${props => (props.disabled ? '0.4' : '1')};
@@ -66,6 +68,13 @@ const StyledIcon = styled(Icon)`
 `;
 
 const DropDownComponent = ({ view,  item }) => {
+
+  const refElemetns = useSelector(referenceElementSelector);
+  
+  useEffect(() => {
+    alert("Hello");
+    console.log(refElemetns);
+  }, []);
 
   const dropDownOptions = [
     {
@@ -318,7 +327,7 @@ const DropDownComponent = ({ view,  item }) => {
         </DropDownMenu>
       </Wrapper>
     ),
-    [isDisabled, isOpen, label],
+    [isDisabled, isOpen, label, dropDownOptions],
   );
 
   return MultipleDropDown;

@@ -50,7 +50,8 @@ export default ({ placeholder, targetFormat, value, schema, plugins }) => {
   } else {
     const editorContent = value || '';
     const parse = parser(schema);
-    WaxOptions.doc = parse(editorContent);
+    const parsedHTML = parse(editorContent);
+    WaxOptions.doc = parsedHTML;
   }
   return WaxOptions;
 };

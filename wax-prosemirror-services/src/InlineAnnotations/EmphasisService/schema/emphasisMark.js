@@ -17,7 +17,6 @@ const emphasisMark = {
     class: { default: 'italic' },
   },
   toDOM(hook, next) {
-    console.log(hook.node.attrs);
     hook.value = ['span', hook.node.attrs, 0];
     // hook.value = ['span', hook.node.attrs, 0];
     next();

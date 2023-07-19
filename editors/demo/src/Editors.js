@@ -9,6 +9,10 @@ import NCBI from './NCBI/NCBI';
 import OEN from './OEN/OEN';
 import { json } from 'react-router-dom';
 import { updateAll, userSelector } from './store/userSlice';
+import axios from 'axios';
+import { backendApiUrl } from '../../../editor-config';
+import { disableMouse } from 'keypress';
+import { addElements } from './store/referenceElementSlice';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -76,6 +80,18 @@ const Editors = () => {
   };
   const [editorInfo, setEditorInfo] = useState(initialState);
 
+  const state = useSelector(userSelector);
+
+  const initReferenceElements = ({ user }) => {
+    axios.get(`${backendApiUrl}/reference-element`, { headers: { 'Authorization': `Bearer ${user.token}` } })
+      .then(res => {
+        dispatch(addElements(res.data.data.referenceStyles));
+      }).catch(err => {
+        console.log(err);
+      })
+
+  }
+
   useEffect(() => {
     const url = new URL(window.location.href);
     let user = url.searchParams.get('user');
@@ -85,20 +101,33 @@ const Editors = () => {
     }
   }, []);
 
-  const displayProject = () => {
-    switch (project) {
-      case 'editoria':
-        return <Editoria />;
-      case 'ncbi':
-        return <NCBI />;
-      case 'oen':
-        return <OEN />;
-      default:
-        return <HHMI />;
+  const [initialContent, setInitialContent] = useState({ content: null, isLoading: true });
+  useEffect(() => {
+    if (state.token) {
+      axios.get(`${backendApiUrl}/get-document-content/doc1`, { headers: { 'Authorization': `Bearer ${state.token}` } })
+        .then(res => {
+          setInitialContent(pre => ({ ...pre, content: res.data.data.wordDocument, isLoading: false }));
+        }).catch(err => {
+          setInitialContent(pre => ({ ...pre, isLoading: false }));
+          console.log(err);
+        })
+        initReferenceElements({ user: state });
     }
-  };
+  }, [state.token]);
 
-  const sateUser = useSelector(userSelector)
+  // const displayProject = () => {
+  //   switch (project) {
+  //     case 'editoria':
+  //       return <Editoria />;
+  //     case 'ncbi':
+  //       return <NCBI />;
+  //     case 'oen':
+  //       return <OEN />;
+  //     default:
+  //       return <HHMI />;
+  //   }
+  // };
+
 
   return (
     <>
@@ -132,7 +161,7 @@ const Editors = () => {
           </ProjectButton>
         </Projects>
       </ChooseProject> */}
-      <ProjectContainer>{displayProject()}</ProjectContainer>
+      <ProjectContainer>{(initialContent.content != null || initialContent.isLoading == false) && <Editoria initialContent={initialContent.content} />}</ProjectContainer>
     </>
   );
 };

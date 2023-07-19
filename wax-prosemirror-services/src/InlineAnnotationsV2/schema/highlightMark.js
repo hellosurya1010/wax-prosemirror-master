@@ -7,6 +7,9 @@ const highlightMark = {
   parseDOM: [
     {
       tag: 'span.highlight',
+      attrs: {
+        type: "custome-attrs",
+      },
       getAttrs(hook, next) {
         Object.assign(hook, {
           class: hook.dom.getAttribute('class'),

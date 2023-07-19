@@ -14,6 +14,7 @@ class TextHighlightTool extends Tools {
   title = 'Text Highlighter';
   icon = 'highlight';
   name = 'TextHighlightTool';
+  
 
   select = () => {
     //  return !activeView.state.selection.empty;
@@ -31,7 +32,6 @@ class TextHighlightTool extends Tools {
       // toggleMark(state.config.schema.marks[color])(state, dispatch);
       // return;
 
-      
       const {
         selection: { $from, $to },
       } = state;

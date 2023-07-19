@@ -44,6 +44,7 @@ const WaxView = forwardRef((props, ref) => {
     scrollThreshold,
   } = props;
 
+
   const context = useContext(WaxContext);
   const { createPortal } = useContext(PortalContext);
   const [mounted, setMounted] = useState(false);
