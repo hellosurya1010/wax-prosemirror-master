@@ -5,7 +5,6 @@ import { ToolGroup } from 'wax-prosemirror-core';
 class MathEquation extends ToolGroup {
   tools = [];
   constructor(@inject('MathEquationTool') mathEquationTool) {
-    console.log(mathEquationTool);
     super();
     this.tools = [mathEquationTool];
   }

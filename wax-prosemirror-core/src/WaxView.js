@@ -65,6 +65,9 @@ const WaxView = forwardRef((props, ref) => {
           plugins: context.app.getPlugins(),
         });
 
+        console.log(options);
+
+
         view = new EditorView(
           { mount: node },
           {

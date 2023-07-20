@@ -14,7 +14,6 @@ class MathEquationService extends Service {
     const {
       schema: { schema },
     } = this.app;
-    console.log(schema);
   }
 
   register() {

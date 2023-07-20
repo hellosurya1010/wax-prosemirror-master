@@ -159,13 +159,13 @@ export default {
     columnResizing(),
     tableEditing(),
     invisibles([hardBreak()]),
-    disallowPasteImagesPlugin(() =>
+    disallowPasteImagesPlugin(() => 
       onWarning(
         'Images are not allowed. Please upload them through filemanager',
       ),
     ),
   ],
-  ImageService: { showAlt: true },
+  // ImageService: { showAlt: true },
   CustomTagService: {
     tags: [
       { label: 'custom-tag-label-1', tagType: 'inline' },
@@ -195,12 +195,12 @@ export default {
     new InlineAnnotationsService(),
     new TrackChangeService(),
     new CommentsService(),
-    new ImageService(),
     new TablesService(),
     new BaseService(),
     new BaseToolGroupService(),
     new NoteService(),
     new TableToolGroupService(),
+    new ImageService(),
     new ImageToolGroupService(),
     new AnnotationToolGroupService(),
     new NoteToolGroupService(),
