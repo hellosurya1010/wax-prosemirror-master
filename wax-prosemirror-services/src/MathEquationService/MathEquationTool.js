@@ -21,7 +21,15 @@ export default class MathEquation extends Tools {
     if (isEmpty(view)) return null;
 
     return this.isDisplayed() ? (
-      <SpecialCharactersTool item={this.toJSON()} key={uuidv4()} view={view} />
+      <SpecialCharactersTool
+        item={this.toJSON()}
+        displayed={this.isDisplayed()}
+        config={this.config}
+        key={uuidv4()}
+        item2={this}
+        pmplugins={this.pmplugins}
+        view={view}
+      />
     ) : null;
   }
 }

@@ -15,6 +15,15 @@
   <script src="js/lib/keypress-2.1.5.min.js"></script>
   <script src="js/symbol-entities.js?v=956" defer></script>
   <script src="js/math-editor.js?v=956" defer></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <style>
+    #MathImage {
+      /* display: none; */
+    }
+  </style>
+
 </head>
 
 <body>
@@ -101,7 +110,7 @@
   <br>
   <br>
   <br>
-  <div class="output" contentEditable="true">
+  <div class="output" id="editor-content" contentEditable="true">
     <math displaystyle="true">
       <mmultiscripts>
         <mrow>
@@ -137,9 +146,65 @@
       <mi>&nbsp;</mi>
     </math>
   </div>
+  <div style="display: flex;" id="image-output"></div>
   <button id="insmath" class="button button-primary" onClick="sendMathML();">Insert Math</button>
   <textarea id="mathmlcode" cols="50" rows="7" ondblclick="this.style.display='none';"
     title="Double-click on this to remove the code area"></textarea>
+
+  <button id="convertButton">Convert to Image</button>
+  <img id="MathImage" src="" alt="">
+
+  <!-- JavaScript code to handle the conversion -->
+  <script>
+
+    // MathJax configuration to skip automatic typesetting on page load
+    MathJax.Hub.Config({
+      skipStartupTypeset: true,
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    });
+
+
+    const output = document.querySelector('.output');
+    const MathImage = document.getElementById('MathImage');
+    const imageOutput = document.getElementById("image-output");
+    const editorContent = document.querySelector("#editor-content math");
+
+    function renderMathML(inputMathML) {
+      // Create a temporary div to render MathML using MathJax
+      const tempDiv = document.createElement('div');
+      tempDiv.appendChild(inputMathML.cloneNode(true)); // Clone the input MathML to avoid modifying the original
+      console.log(tempDiv);
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub, tempDiv]);
+      const mathJaxOutput = tempDiv.innerHTML;
+      imageOutput.innerHTML = mathJaxOutput;
+    }
+
+    const mathJaxToImagConverter = () => {
+
+      // Use html2canvas to capture the element
+      html2canvas(imageOutput).then(function (canvas) {
+        // Create an image from the canvas
+        let imageUrl = canvas.toDataURL();
+        MathImage.src = imageUrl;
+        // localStorage.setItem('imageUrl ', imageUrl);
+        // console.log(imageUrl);
+      });
+    }
+
+    document.getElementById("convertButton").addEventListener("click", function () {
+      document.querySelector(`[id="__cursor__"]`)?.setAttribute('id', '');
+      imageOutput.style.display = 'block';
+      renderMathML(editorContent, imageOutput);
+      mathJaxToImagConverter();
+      // imageOutput.style.display = 'none';
+    });
+
+  </script>
+
 </body>
 
 </html>

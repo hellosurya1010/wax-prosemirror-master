@@ -106,7 +106,7 @@ const SpecialCharacter = styled.div`
   ${override('Wax.SpecialCharacterButton')}
 `;
 
-const SpecialCharactersComponent = ({ close }) => {
+const SpecialCharactersComponent = ({ close, fileUpload }) => {
   const { activeView, app } = useContext(WaxContext);
   const [searchValue, setSearchValue] = useState('');
   const [isFirstRun, setFirstRun] = useState(true);
@@ -164,7 +164,7 @@ const SpecialCharactersComponent = ({ close }) => {
         </SpecialCharactersGroup>,
       );
     });
-    return <div><EquationMaker/></div>;
+    return <div><EquationMaker fileUpload={fileUpload}/></div>;
     return <div>{lists}</div>;
   };
 

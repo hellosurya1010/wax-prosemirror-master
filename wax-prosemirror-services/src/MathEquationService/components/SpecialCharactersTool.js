@@ -7,6 +7,7 @@ import {
   MenuButton,
 } from 'wax-prosemirror-core';
 import SpecialCharactersComponent from './SpecialCharactersComponent';
+import fileUpload from '../image/fileUpload';
 
 const Wrapper = styled.div`
   font-size: 0;
@@ -23,10 +24,11 @@ const DropWrapper = styled.div`
   ${override('Wax.SpecialCharacterToolWrapper')}
 `;
 
-const SpecialCharactersTool = ({ item }) => {
+const SpecialCharactersTool = ({ item, view, config, pmplugins }) => {
+  const context = useContext(WaxContext);
   const {
     pmViews: { main },
-  } = useContext(WaxContext);
+  } = context;
 
   const { icon, title } = item;
   const [isOpen, setIsOpen] = useState(false);
@@ -40,10 +42,17 @@ const SpecialCharactersTool = ({ item }) => {
   });
   if (!isEditable) isDisabled = true;
 
+  const upload = fileUpload(
+    view,
+    config.get('fileUpload'),
+    pmplugins.get('imagePlaceHolder'),
+    context,
+  );
+
   const MemorizedDropdown = useMemo(
     () => (
       <Wrapper ref={ref}>
-        
+
         <MenuButton
           active={isOpen}
           disabled={isDisabled}
@@ -57,6 +66,7 @@ const SpecialCharactersTool = ({ item }) => {
         {isOpen && (
           <DropWrapper>
             <SpecialCharactersComponent
+              fileUpload={upload}
               close={() => {
                 setIsOpen(false);
               }}
