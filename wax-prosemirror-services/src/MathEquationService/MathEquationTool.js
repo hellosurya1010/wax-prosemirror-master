@@ -8,7 +8,7 @@ import SpecialCharactersTool from './components/SpecialCharactersTool';
 @injectable()
 export default class MathEquation extends Tools {
   title = 'Math Equation';
-  icon = 'plusSquare';
+  icon = 'mathMl';
   name = 'MathEquation';
 
   get enable() {

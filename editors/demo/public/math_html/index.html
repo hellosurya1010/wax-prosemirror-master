@@ -15,14 +15,15 @@
   <script src="js/lib/keypress-2.1.5.min.js"></script>
   <script src="js/symbol-entities.js?v=956" defer></script>
   <script src="js/math-editor.js?v=956" defer></script>
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <!-- <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-  <style>
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+  <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-svg.js"></script>
+  <!-- <style>
     #MathImage {
       /* display: none; */
     }
-  </style>
+  </style> -->
 
 </head>
 
@@ -151,11 +152,58 @@
   <textarea id="mathmlcode" cols="50" rows="7" ondblclick="this.style.display='none';"
     title="Double-click on this to remove the code area"></textarea>
 
-  <button id="convertButton">Convert to Image</button>
-  <img id="MathImage" src="" alt="">
+  <button onclick="convert()" id="convertButton">Convert to Image</button>
+  <img id="MathImage" src="" alt="Result img">
+
+
+  <script>
+    MathJax.config.startup.typeset = false;
+    const editorContent = document.querySelector("#editor-content");
+    const imageOutput = document.getElementById("image-output");
+    const MathImage = document.getElementById('MathImage');
+
+    function convertSVGToBase64(svgElement) {
+      return new Promise((resolve, reject) => {
+        try {
+          // Serialize the SVG element to an XML string
+          const xmlString = new XMLSerializer().serializeToString(svgElement);
+
+          // Encode the XML string to base64
+          const base64Data = "data:image/svg+xml;base64," + btoa(xmlString);
+
+          resolve(base64Data);
+        } catch (error) {
+          reject(new Error('Error during SVG to Base64 conversion: ' + error.message));
+        }
+      });
+    }
+
+    // function convertSVGToBase64(svgElement) {
+    //   const xmlString = new XMLSerializer().serializeToString(svgElement);
+    //   return 'data:image/svg+xml;base64,' + btoa(xmlString);
+    // }
+
+    const mathMlToSvg = () => {
+      const svgEl = MathJax.mathml2svg(editorContent.innerHTML);
+      MathJax.startup.document.clear();
+      MathJax.startup.document.updateDocument();
+      return svgEl;
+    }
+
+    const convert = () => {
+      const svg = mathMlToSvg()?.querySelector('svg');
+      // console.log(svg, svg.node());
+      imageOutput.appendChild(svg);
+      convertSVGToBase64(svg).then(src => {
+        console.log(src);
+        MathImage.src = src;
+      }).catch(error => console.log(error));
+    }
+
+  </script>
 
   <!-- JavaScript code to handle the conversion -->
-  <script>
+  <!-- <script>
 
     // MathJax configuration to skip automatic typesetting on page load
     MathJax.Hub.Config({
@@ -203,7 +251,7 @@
       // imageOutput.style.display = 'none';
     });
 
-  </script>
+  </script> -->
 
 </body>
 

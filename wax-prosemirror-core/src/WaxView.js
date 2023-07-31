@@ -19,6 +19,7 @@ import ComponentPlugin from './ComponentPlugin';
 import WaxOptions from './WaxOptions';
 import helpers from './helpers/helpers';
 import './styles/styles.css';
+import applyDevTools from "prosemirror-dev-tools";
 
 const EditorContainer = styled.div`
   height: 100%;
@@ -65,7 +66,6 @@ const WaxView = forwardRef((props, ref) => {
           plugins: context.app.getPlugins(),
         });
 
-        console.log(options);
 
 
         view = new EditorView(
@@ -85,6 +85,8 @@ const WaxView = forwardRef((props, ref) => {
           },
         );
 
+        console.log(view);
+        applyDevTools(view);
         setMounted(true);
 
         context.updateView(

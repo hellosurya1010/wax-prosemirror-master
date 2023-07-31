@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "babel-eslint": "10.0.3",
+    "prosemirror-dev-tools": "^4.0.0",
     "react-app-rewired": "^2.1.1",
     "react-scripts": "3.4"
   }

@@ -18,6 +18,7 @@ const imageNode = {
     {
       tag: 'img[src]',
       getAttrs(hook, next) {
+        console.log(hook.dom.dataset);
         Object.assign(hook, {
           src: hook.dom.getAttribute('src'),
           title: hook.dom.getAttribute('title'),
@@ -25,6 +26,7 @@ const imageNode = {
           // track: SchemaHelpers.parseTracks(hook.dom.dataset.track),
           alt: hook.dom.getAttribute('alt'),
           fileid: hook.dom.dataset.fileid,
+          extraData: hook.dom.dataset,
         });
         next();
       },
