@@ -58,9 +58,7 @@ class TextHighlightTool extends Tools {
   }
 
   renderTool(view) {
-    if (isEmpty(view)) return null;
-      
-    console.log(this.toJSON());
+    if (isEmpty(view)) return null;      
     return this.isDisplayed() ? (
       <TextHighlightingTool item={this.toJSON()} key={uuidv4()} view={view} />
     ) : null;

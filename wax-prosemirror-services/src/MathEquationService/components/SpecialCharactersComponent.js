@@ -14,7 +14,7 @@ import { filter, groupBy, debounce } from 'lodash';
 import EquationMaker from './EquationMaker';
 
 const Wrapper = styled.div`
-  width: 400px;
+  width: 600px;
   height: 250px;
   overflow: hidden;
   background: #fff;
@@ -47,7 +47,7 @@ const SearchInput = styled.input`
 `;
 
 const CharactersListComponent = styled.div`
-  height: 200px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -106,7 +106,10 @@ const SpecialCharacter = styled.div`
   ${override('Wax.SpecialCharacterButton')}
 `;
 
-const SpecialCharactersComponent = ({ close, fileUpload }) => {
+const SpecialCharactersComponent = ({ close, fileUpload, view }) => {
+
+
+
   const { activeView, app } = useContext(WaxContext);
   const [searchValue, setSearchValue] = useState('');
   const [isFirstRun, setFirstRun] = useState(true);
@@ -141,36 +144,12 @@ const SpecialCharactersComponent = ({ close, fileUpload }) => {
     });
   };
 
-  const renderList = () => {
-    const lists = [];
-
-    Object.keys(groupBy(specialCharactersList, 'group')).forEach(key => {
-      lists.push(
-        <SpecialCharactersGroup key={key}>
-          <GroupTitle> {key} </GroupTitle>
-          <GroupCharacters>
-            {groupBy(specialCharactersList, 'group')[key].map(character => {
-              return (
-                <SpecialCharacter
-                  key={uuidv4()}
-                  onMouseDown={() => insertCharacter(character)}
-                  title={character.name}
-                >
-                  <span>{character.unicode}</span>
-                </SpecialCharacter>
-              );
-            })}
-          </GroupCharacters>
-        </SpecialCharactersGroup>,
-      );
-    });
-    return <div><EquationMaker fileUpload={fileUpload}/></div>;
-    return <div>{lists}</div>;
-  };
 
   return (
     <Wrapper>
-      <CharactersListComponent>{renderList()}</CharactersListComponent>
+      <CharactersListComponent>
+        <EquationMaker fileUpload={fileUpload} view={view}/>
+      </CharactersListComponent>
     </Wrapper>
   );
 };

@@ -129,15 +129,15 @@ img.ProseMirror-separator {
   }
 
   .invisible--space:before {
-    content: '·';
+    /* content: '·'; */
   }
 
   .invisible--break:before {
-    content: '¬';
+    /* content: '¬'; */
   }
 
   .invisible--par:after {
-    content: '¶';
+    /* content: '¶'; */
   }
 
 

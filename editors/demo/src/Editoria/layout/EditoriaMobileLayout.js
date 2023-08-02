@@ -104,7 +104,7 @@ const EditorContainer = styled.div`
   width: 100%;
   height: 100%;
   .ProseMirror {
-    box-shadow: 0 0 8px #ecedf1;
+    box-shadow: inset 0 0 8px 6px #ecedf1;
     min-height: 90%;
     padding: ${grid(25)} ${grid(2)} ${grid(40)} ${grid(2)};
   }
@@ -123,7 +123,7 @@ const CommentsContainerNotes = styled.div`
 `;
 
 const NotesAreaContainer = styled.div`
-  box-shadow: 0 0 8px #ecedf1;
+  box-shadow: inset 0 0 8px 6px #ecedf1;
   background: #fff;
   display: flex;
   flex-direction: row;

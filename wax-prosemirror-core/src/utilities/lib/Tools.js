@@ -53,7 +53,6 @@ class Tools {
 
   renderTool(view) {
     if (isEmpty(view)) return null;
-
     return this._isDisplayed ? (
       <Button item={this.toJSON()} key={uuidv4()} view={view} />
     ) : null;

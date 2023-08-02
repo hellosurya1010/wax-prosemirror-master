@@ -107,7 +107,7 @@ const EditorContainer = styled.div`
   height: 100%;
 
   .ProseMirror {
-    box-shadow: 0 0 8px #ecedf1;
+    box-shadow: inset 0 0 8px 6px #ecedf1;
     min-height: 98%;
     padding: ${grid(10)};
   }

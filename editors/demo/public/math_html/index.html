@@ -19,141 +19,145 @@
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
   <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-svg.js"></script>
-  <!-- <style>
-    #MathImage {
-      /* display: none; */
+  <style>
+    .d-none {
+      display: none;
     }
-  </style> -->
+  </style>
 
 </head>
 
 <body>
-  <div class="menus">
-    <a id="subsup" title="subscript superscript" class="button button-primary">&square;<sub>&square;</sub></a>
-    <a id="root" title="square root" class="button button-primary"><math>
-        <msqrt>
-          <mrow>
+  <section style="display: flex; align-items: center; flex-direction: column;">
+    <div class="menus">
+      <a id="subsup" title="subscript superscript" class="button button-primary">&square;<sub>&square;</sub></a>
+      <a id="root" title="square root" class="button button-primary"><math>
+          <msqrt>
+            <mrow>
+              <mi>&square;</mi>
+            </mrow>
+          </msqrt>
+        </math></a>
+      <a id="frac" title="fraction" class="button button-primary"><math>
+          <mfrac>
             <mi>&square;</mi>
+            <mi>&square;</mi>
+          </mfrac>
+        </math></a>
+      <a id="underover" title="under and over" class="button button-primary"><math>
+          <munderover>
+            <mi>&sum;</mi>
+            <mi>&square;</mi>
+            <mi>&square;</mi>
+          </munderover>
+        </math></a>
+      <a id="matrix" title="fence and matrices" class="button button-primary"><math>
+          <mo>(</mo>
+          <mtable>
+            <mtr>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+              <mtd>
+                <mi>&square;</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo>)</mo>
+        </math></a>
+      <a id="greek" title="greek" class="button button-primary"><math>
+          <mrow>
+            <mi>&alpha;</mi>
+            <mi>&beta;</mi>
           </mrow>
-        </msqrt>
-      </math></a>
-    <a id="frac" title="fraction" class="button button-primary"><math>
+        </math></a>
+      <a id="math" title="math symbols" class="button button-primary"><math>
+          <mrow>
+            <mi>&sum;</mi>
+            <mi>&infin;</mi>
+          </mrow>
+        </math></a>
+      <a id="text" title="math symbols" class="button button-primary"><math>
+          <mrow>
+            <mtext>Text</mtext>
+          </mrow>
+        </math></a>
+      <a id="aboutus" title="About Us" class="button button-primary"><img class="logo" src="img/mlq_logo.svg"></a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="output" style="display: flex; justify-content: center; box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;" id="editor-content" contentEditable="true">
+      <math displaystyle="true">
+        <mmultiscripts>
+          <mrow>
+            <mi>F</mi>
+          </mrow>
+          <mrow>
+            <mi>k</mi>
+          </mrow>
+          <mrow>
+            <mi>l</mi>
+          </mrow>
+          <mprescripts />
+          <mrow>
+            <mi>i</mi>
+          </mrow>
+          <mrow>
+            <mi>j</mi>
+          </mrow>
+        </mmultiscripts>
+        <mo>=</mo>
         <mfrac>
-          <mi>&square;</mi>
-          <mi>&square;</mi>
+          <mrow>
+            <mi>a</mi>
+            <mo>+</mo>
+            <mi>b</mi>
+          </mrow>
+          <mrow>
+            <mi>c</mi>
+            <mo>+</mo>
+            <mi>d</mi>
+          </mrow>
         </mfrac>
-      </math></a>
-    <a id="underover" title="under and over" class="button button-primary"><math>
-        <munderover>
-          <mi>&sum;</mi>
-          <mi>&square;</mi>
-          <mi>&square;</mi>
-        </munderover>
-      </math></a>
-    <a id="matrix" title="fence and matrices" class="button button-primary"><math>
-        <mo>(</mo>
-        <mtable>
-          <mtr>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-          </mtr>
-          <mtr>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-          </mtr>
-          <mtr>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-            <mtd>
-              <mi>&square;</mi>
-            </mtd>
-          </mtr>
-        </mtable>
-        <mo>)</mo>
-      </math></a>
-    <a id="greek" title="greek" class="button button-primary"><math>
-        <mrow>
-          <mi>&alpha;</mi>
-          <mi>&beta;</mi>
-        </mrow>
-      </math></a>
-    <a id="math" title="math symbols" class="button button-primary"><math>
-        <mrow>
-          <mi>&sum;</mi>
-          <mi>&infin;</mi>
-        </mrow>
-      </math></a>
-    <a id="text" title="math symbols" class="button button-primary"><math>
-        <mrow>
-          <mtext>Text</mtext>
-        </mrow>
-      </math></a>
-    <a id="aboutus" title="About Us" class="button button-primary"><img class="logo" src="img/mlq_logo.svg"></a>
-  </div>
-  <br>
-  <br>
-  <br>
-  <div class="output" id="editor-content" contentEditable="true">
-    <math displaystyle="true">
-      <mmultiscripts>
-        <mrow>
-          <mi>F</mi>
-        </mrow>
-        <mrow>
-          <mi>k</mi>
-        </mrow>
-        <mrow>
-          <mi>l</mi>
-        </mrow>
-        <mprescripts />
-        <mrow>
-          <mi>i</mi>
-        </mrow>
-        <mrow>
-          <mi>j</mi>
-        </mrow>
-      </mmultiscripts>
-      <mo>=</mo>
-      <mfrac>
-        <mrow>
-          <mi>a</mi>
-          <mo>+</mo>
-          <mi>b</mi>
-        </mrow>
-        <mrow>
-          <mi>c</mi>
-          <mo>+</mo>
-          <mi>d</mi>
-        </mrow>
-      </mfrac>
-      <mi>&nbsp;</mi>
-    </math>
-  </div>
-  <div style="display: flex;" id="image-output"></div>
-  <button id="insmath" class="button button-primary" onClick="sendMathML();">Insert Math</button>
-  <textarea id="mathmlcode" cols="50" rows="7" ondblclick="this.style.display='none';"
-    title="Double-click on this to remove the code area"></textarea>
+        <mi>&nbsp;</mi>
+      </math>
+    </div>
+    <div class="d-none">
+      <div style="display: flex;" id="image-output"></div>
+      <button id="insmath" class="button button-primary" onClick="sendMathML();">Insert Math</button>
+      <textarea id="mathmlcode" cols="50" rows="7" ondblclick="this.style.display='none';"
+        title="Double-click on this to remove the code area"></textarea>
 
-  <button onclick="convert()" id="convertButton">Convert to Image</button>
-  <img id="MathImage" src="" alt="Result img">
+      <button onclick="convert()" id="convertButton" style="display: none;">Convert to Image</button>
+      <img id="MathImage" src="" alt="Result img">
+    </div>
+  </section>
 
 
   <script>
@@ -191,6 +195,7 @@
     }
 
     const convert = () => {
+      // MathImage.src = '';
       const svg = mathMlToSvg()?.querySelector('svg');
       // console.log(svg, svg.node());
       imageOutput.appendChild(svg);

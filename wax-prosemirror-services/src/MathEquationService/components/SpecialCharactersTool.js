@@ -56,7 +56,7 @@ const SpecialCharactersTool = ({ item, view, config, pmplugins }) => {
         <MenuButton
           active={isOpen}
           disabled={isDisabled}
-          // iconName={icon}
+          iconName={icon}
           onMouseDown={() => {
             setIsOpen(!isOpen);
           }}
@@ -67,6 +67,7 @@ const SpecialCharactersTool = ({ item, view, config, pmplugins }) => {
           <DropWrapper>
             <SpecialCharactersComponent
               fileUpload={upload}
+              view={view}
               close={() => {
                 setIsOpen(false);
               }}

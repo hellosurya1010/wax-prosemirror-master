@@ -4,6 +4,7 @@ import { PortalContext } from '../../../../PortalContext';
 
 export default () => {
   const { portals } = useContext(PortalContext);
+  console.log({portals});
 
   return (
     <>

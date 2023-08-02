@@ -20,7 +20,6 @@ export const createHtmlNode = props => {
                         type: {default: 'undefined'}
                     },
                     toDOM(hook, next) {
-                        console.log("toDOM" ,hook);
                         // hook.value = [tag, {class: "test"}, 0];
                         hook.value = [tag, hook.node.attrs, 0];
                         next();
@@ -28,7 +27,6 @@ export const createHtmlNode = props => {
                     parseDOM: [{
                         tag: tag,
                         getAttrs(hook, next) {
-                            console.log('parseDom', hook);
                             if (hook.dom) {
                                 let attrs = getAttributesOfElement({ element: hook.dom });
                                 Object.assign(hook, attrs);
