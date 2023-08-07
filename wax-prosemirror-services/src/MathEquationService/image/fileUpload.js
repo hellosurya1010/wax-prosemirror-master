@@ -6,7 +6,7 @@ const findPlaceholder = (state, id, placeholderPlugin) => {
   return found.length ? found[0].from : null;
 };
 
-export default (view, fileUpload, placeholderPlugin, context) => ({src, mathMl}) => {
+export default (view, fileUpload, placeholderPlugin, context) => ({src, mathml}) => {
   const { state } = view;
   // A fresh object to act as the ID for this upload
   const id = {};
@@ -24,7 +24,7 @@ export default (view, fileUpload, placeholderPlugin, context) => ({src, mathMl})
   try {
 
     // let url = file;
-    let extraData = {mathMl};
+    let extraData = {mathml};
     // if (typeof file === 'object') {
     //   url = file.url;
     //   extraData = file.extraData;

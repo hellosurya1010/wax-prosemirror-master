@@ -85,7 +85,7 @@ const WaxView = forwardRef((props, ref) => {
           },
         );
 
-        console.log(view);
+        window.editorView = view;
         applyDevTools(view);
         setMounted(true);
 

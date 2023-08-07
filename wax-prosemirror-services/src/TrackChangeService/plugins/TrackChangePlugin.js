@@ -6,6 +6,7 @@ import findSelectedChanges from './FindSelectedChanges';
 export const key = new PluginKey('track');
 
 export default options => {
+  console.log(key);
   return new Plugin({
     key,
     state: {

@@ -25,6 +25,7 @@ const imageNode = {
           // track: SchemaHelpers.parseTracks(hook.dom.dataset.track),
           alt: hook.dom.getAttribute('alt'),
           fileid: hook.dom.dataset.fileid,
+          dataset: hook.dom.dataset,
         });
         next();
       },
@@ -41,6 +42,7 @@ const imageNode = {
 
     // eslint-disable-next-line no-param-reassign
     const { extraData } = hook.node.attrs;
+    console.log(extraData);
     hook.value = [
       'img',
       {
